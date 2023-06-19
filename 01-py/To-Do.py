@@ -11,3 +11,5 @@ class ToDoList:
             self, root, text="Add Task", command=self.add_task)
         self.delButton = Button(
             self, root, text="Delete Task", command=self.delete_task)
+
+        # Gui Layout
