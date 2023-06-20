@@ -30,3 +30,9 @@ class ToDoList:
             self.listbox.delete(task_index)
         except:
             pass
+
+
+root = Tk()
+root.title("Python To-Do-List")
+root.geometry("300x400")  # tamaño de la pantalla
+to_do_list
