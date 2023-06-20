@@ -13,3 +13,13 @@ class ToDoList:
             self, root, text="Delete Task", command=self.delete_task)
 
         # Gui Layout
+        self.entry.pack()
+        self.addButton.pack()
+        self.listbox.pack()
+        self.delButton.pack()
+
+    def add_task(self):
+        task = self.entry.get()
+        if task != " ":
+            self.listbox.insert(END, task)
+            self.entry.delete(0, END)
