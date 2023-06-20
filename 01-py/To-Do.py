@@ -23,3 +23,10 @@ class ToDoList:
         if task != " ":
             self.listbox.insert(END, task)
             self.entry.delete(0, END)
+
+    def delete_task(self):
+        try:
+            task_index = self.listbox.curselection()[0]
+            self.listbox.delete(task_index)
+        except:
+            pass
