@@ -53,6 +53,6 @@ class ToDoList:
 
 root = Tk()
 root.title("Python To-Do-List")
-root.geometry("300x400")  # tamaño de la pantalla
+root.geometry("600x500")  # tamaño de la pantalla
 to_do_list = ToDoList(root)  # llamo a mi clase
 root.mainloop()
