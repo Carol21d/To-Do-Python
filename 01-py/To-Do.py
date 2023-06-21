@@ -2,15 +2,15 @@ from tkinter import *
 
 
 class ToDoList:
-    def _init_(self, root):
+    def __init__(self, root):
         self.tasks = []
         self.root = root
-        self.listbox = Listbox(self, root)
-        self.entry = Entry(self, root)
+        self.listbox = Listbox(self.root)
+        self.entry = Entry(self.root)
         self.addButton = Button(
-            self, root, text="Add Task", command=self.add_task)
+            self.root, text="Add Task", command=self.add_task)
         self.delButton = Button(
-            self, root, text="Delete Task", command=self.delete_task)
+            self.root, text="Delete Task", command=self.delete_task)
 
         # Gui Layout
         self.entry.pack()
@@ -20,7 +20,7 @@ class ToDoList:
 
     def add_task(self):
         task = self.entry.get()
-        if task != " ":
+        if task != "":
             self.listbox.insert(END, task)
             self.entry.delete(0, END)
 
@@ -35,4 +35,5 @@ class ToDoList:
 root = Tk()
 root.title("Python To-Do-List")
 root.geometry("300x400")  # tamaño de la pantalla
-to_do_list
+to_do_list = ToDoList(root)  # llamo a mi clase
+root.mainloop()
