@@ -7,6 +7,7 @@ class ToDoList:
         self.root = root
         self.listbox = Listbox(self.root)
         self.entry = Entry(self.root)
+        self.listbox.bind("<<ListboxSelect>>", self.on_task_selected)
         self.addButton = Button(
             self.root, text="Add Task", command=self.add_task)
         self.delButton = Button(
@@ -30,6 +31,9 @@ class ToDoList:
             self.listbox.delete(task_index)
         except:
             pass
+
+    def on_task_selected(self, event):
+        selected_index = self.listbox.curselection()
 
 
 root = Tk()
