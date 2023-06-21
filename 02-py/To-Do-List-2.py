@@ -12,15 +12,30 @@ root = Tk()
 # myLabel2.grid(row=1, column=0)
 
 
-# creamos una funcion
-def _click_btn():
-    mylabel = Label(root, text="Haz hecho click en el boton")
+#  creamos una funcion
+# def _click_btn():
+#     mylabel = Label(root, text="Haz hecho click en el boton")
+#     mylabel.pack()
+# # creating buttons
+# myBtn = Button(root, text="Click here",
+#                command=_click_btn, bg="blue", fg="orange")
+# myBtn.pack()
+
+
+# input fields
+
+entrada = Entry(root, width=40)
+entrada.pack()
+
+
+def btn_fields():
+    # mylabel = Label(root, text=entrada.get())
+    mylabel = Label(root, text=" Texto introducido: " +
+                    entrada.get())  # alternativa
     mylabel.pack()
 
 
-# creating buttons
-myBtn = Button(root, text="Click here",
-               command=_click_btn, bg="blue", fg="orange")
+myBtn = Button(root, text="Click here!", command=btn_fields)
 myBtn.pack()
 
 
