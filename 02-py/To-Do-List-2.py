@@ -19,7 +19,8 @@ def _click_btn():
 
 
 # creating buttons
-myBtn = Button(root, text="Click here", command=_click_btn)
+myBtn = Button(root, text="Click here",
+               command=_click_btn, bg="blue", fg="orange")
 myBtn.pack()
 
 
