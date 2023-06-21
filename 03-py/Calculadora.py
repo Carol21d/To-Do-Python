@@ -11,27 +11,44 @@ entrada.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
 # funcion
 
-def add_btn():
-    return
+def btn_clicked(number):
+    # entrada.delete(0, END)
+    entrada.insert(0, number)
 
 
 # buttons
-btn_01 = Button(root, text="1", padx=40, pady=20, command=add_btn)
-btn_02 = Button(root, text="2", padx=40, pady=20, command=add_btn)
-btn_03 = Button(root, text="3", padx=40, pady=20, command=add_btn)
-btn_04 = Button(root, text="4", padx=40, pady=20, command=add_btn)
-btn_05 = Button(root, text="5", padx=40, pady=20, command=add_btn)
-btn_06 = Button(root, text="6", padx=40, pady=20, command=add_btn)
-btn_07 = Button(root, text="7", padx=40, pady=20, command=add_btn)
-btn_08 = Button(root, text="8", padx=40, pady=20, command=add_btn)
-btn_09 = Button(root, text="9", padx=40, pady=20, command=add_btn)
-btn_00 = Button(root, text="0", padx=40, pady=20, command=add_btn)
-btn_Equals = Button(root, text="=", padx=40, pady=20, command=add_btn)
-btn_Clear = Button(root, text="C", padx=40, pady=20, command=add_btn)
-btn_Subs = Button(root, text="+", padx=40, pady=20, command=add_btn)
-btn_Rest = Button(root, text="-", padx=40, pady=20, command=add_btn)
-btn_Multi = Button(root, text="x", padx=40, pady=20, command=add_btn)
-btn_Div = Button(root, text="%", padx=40, pady=20, command=add_btn)
+btn_01 = Button(root, text="1", padx=40, pady=20,
+                command=lambda: btn_clicked(1))
+btn_02 = Button(root, text="2", padx=40, pady=20,
+                command=lambda: btn_clicked(2))
+btn_03 = Button(root, text="3", padx=40, pady=20,
+                command=lambda: btn_clicked(3))
+
+btn_04 = Button(root, text="4", padx=40, pady=20,
+                command=lambda: btn_clicked(4))
+btn_05 = Button(root, text="5", padx=40, pady=20,
+                command=lambda: btn_clicked(5))
+btn_06 = Button(root, text="6", padx=40, pady=20,
+                command=lambda: btn_clicked(6))
+btn_07 = Button(root, text="7", padx=40, pady=20,
+                command=lambda: btn_clicked(7))
+btn_08 = Button(root, text="8", padx=40, pady=20,
+                command=lambda: btn_clicked(8))
+btn_09 = Button(root, text="9", padx=40, pady=20,
+                command=lambda: btn_clicked(9))
+btn_00 = Button(root, text="0", padx=40, pady=20,
+                command=lambda: btn_clicked(0))
+btn_Equals = Button(root, text="=", padx=40, pady=20,
+                    command=lambda: btn_clicked)
+btn_Clear = Button(root, text="C", padx=40, pady=20,
+                   command=lambda: btn_clicked)
+btn_Subs = Button(root, text="+", padx=40, pady=20,
+                  command=lambda: btn_clicked)
+btn_Rest = Button(root, text="-", padx=40, pady=20,
+                  command=lambda: btn_clicked)
+btn_Multi = Button(root, text="x", padx=40, pady=20,
+                   command=lambda: btn_clicked)
+btn_Div = Button(root, text="%", padx=40, pady=20, command=lambda: btn_clicked)
 
 
 # ordenando los buttons en la pantalla
