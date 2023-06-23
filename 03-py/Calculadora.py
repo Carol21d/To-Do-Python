@@ -12,8 +12,26 @@ entrada.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 # funcion
 
 def btn_clicked(number):
-    # entrada.delete(0, END)
-    entrada.insert(0, number)
+    current = entrada.get()
+    entrada.delete(0, END)
+    entrada.insert(0, str(current) + str(number))
+
+
+def btn_clear():
+    entrada.delete(0, END)
+
+
+def btn_add():
+    first_number = entrada.get()
+    global f_num
+    f_num = int(first_number)
+    entrada.delete(0, END)
+
+
+def btn_equals():
+    second_number = entrada.get()
+    entrada.delete(0, END)
+    entrada.insert(0, f_num + int(second_number))
 
 
 # buttons
@@ -41,9 +59,9 @@ btn_00 = Button(root, text="0", padx=40, pady=20,
 btn_Equals = Button(root, text="=", padx=40, pady=20,
                     command=lambda: btn_clicked)
 btn_Clear = Button(root, text="C", padx=40, pady=20,
-                   command=lambda: btn_clicked)
+                   command=btn_clear)
 btn_Subs = Button(root, text="+", padx=40, pady=20,
-                  command=lambda: btn_clicked)
+                  command=btn_add)
 btn_Rest = Button(root, text="-", padx=40, pady=20,
                   command=lambda: btn_clicked)
 btn_Multi = Button(root, text="x", padx=40, pady=20,
