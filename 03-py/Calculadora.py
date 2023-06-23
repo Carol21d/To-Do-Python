@@ -21,9 +21,11 @@ def btn_clear():
     entrada.delete(0, END)
 
 
-def btn_add():
+def btn_Subs():
     first_number = entrada.get()
     global f_num
+    global match
+    match = "addition"
     f_num = int(first_number)
     entrada.delete(0, END)
 
@@ -32,6 +34,33 @@ def btn_equals():
     second_number = entrada.get()
     entrada.delete(0, END)
     entrada.insert(0, f_num + int(second_number))
+
+
+def btn_Rest():
+    first_number = entrada.get()
+    global f_num
+    global match
+    match = "subtraction"
+    f_num = int(first_number)
+    entrada.delete(0, END)
+
+
+def btn_Multi():
+    first_number = entrada.get()
+    global f_num
+    global match
+    match = "multiplication"
+    f_num = int(first_number)
+    entrada.delete(0, END)
+
+
+def btn_Div():
+    first_number = entrada.get()
+    global f_num
+    global match
+    match = "division"
+    f_num = int(first_number)
+    entrada.delete(0, END)
 
 
 # buttons
@@ -63,12 +92,12 @@ btn_Clear = Button(root, text="C", padx=40, pady=20,
 
 
 btn_Subs = Button(root, text="+", padx=40, pady=20,
-                  command=btn_add)
+                  command=btn_Subs)
 btn_Rest = Button(root, text="-", padx=40, pady=20,
-                  command=btn_rest)
+                  command=btn_Rest)
 btn_Multi = Button(root, text="x", padx=40, pady=20,
-                   command=btn_multiply)
-btn_Div = Button(root, text="%", padx=40, pady=20, command=btn_div)
+                   command=btn_Multi)
+btn_Div = Button(root, text="%", padx=40, pady=20, command=btn_Div)
 
 
 # ordenando los buttons en la pantalla
