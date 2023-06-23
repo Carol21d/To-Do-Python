@@ -60,13 +60,15 @@ btn_Equals = Button(root, text="=", padx=40, pady=20,
                     command=lambda: btn_clicked)
 btn_Clear = Button(root, text="C", padx=40, pady=20,
                    command=btn_clear)
+
+
 btn_Subs = Button(root, text="+", padx=40, pady=20,
                   command=btn_add)
 btn_Rest = Button(root, text="-", padx=40, pady=20,
-                  command=lambda: btn_clicked)
+                  command=btn_rest)
 btn_Multi = Button(root, text="x", padx=40, pady=20,
-                   command=lambda: btn_clicked)
-btn_Div = Button(root, text="%", padx=40, pady=20, command=lambda: btn_clicked)
+                   command=btn_multiply)
+btn_Div = Button(root, text="%", padx=40, pady=20, command=btn_div)
 
 
 # ordenando los buttons en la pantalla
