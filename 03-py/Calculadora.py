@@ -24,23 +24,31 @@ def btn_clear():
 def btn_Subs():
     first_number = entrada.get()
     global f_num
-    global match
-    match = "addition"
+    global math
+    math = "addition"
     f_num = int(first_number)
     entrada.delete(0, END)
 
 
-def btn_equals():
+def btn_Equals():
     second_number = entrada.get()
     entrada.delete(0, END)
-    entrada.insert(0, f_num + int(second_number))
+
+    if math == "addition":
+        entrada.insert(0, f_num + int(second_number))
+    if math == "substraction":
+        entrada.insert(0, f_num - int(second_number))
+    if math == "multiplication":
+        entrada.insert(0, f_num * int(second_number))
+    if math == "division":
+        entrada.insert(0, f_num / int(second_number))
 
 
 def btn_Rest():
     first_number = entrada.get()
     global f_num
-    global match
-    match = "subtraction"
+    global math
+    math = "substraction"
     f_num = int(first_number)
     entrada.delete(0, END)
 
@@ -48,8 +56,8 @@ def btn_Rest():
 def btn_Multi():
     first_number = entrada.get()
     global f_num
-    global match
-    match = "multiplication"
+    global math
+    math = "multiplication"
     f_num = int(first_number)
     entrada.delete(0, END)
 
@@ -57,8 +65,8 @@ def btn_Multi():
 def btn_Div():
     first_number = entrada.get()
     global f_num
-    global match
-    match = "division"
+    global math
+    math = "division"
     f_num = int(first_number)
     entrada.delete(0, END)
 
@@ -86,7 +94,7 @@ btn_09 = Button(root, text="9", padx=40, pady=20,
 btn_00 = Button(root, text="0", padx=40, pady=20,
                 command=lambda: btn_clicked(0))
 btn_Equals = Button(root, text="=", padx=40, pady=20,
-                    command=lambda: btn_clicked)
+                    command=btn_Equals)
 btn_Clear = Button(root, text="C", padx=40, pady=20,
                    command=btn_clear)
 
