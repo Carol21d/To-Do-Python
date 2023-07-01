@@ -5,7 +5,7 @@ import sqlite3
 
 root = Tk()
 root.title('Database')
-
+root.geometry("400x400")
 # Db
 conn = sqlite3.connect("address_book.db")
 
@@ -66,7 +66,7 @@ f_zipcode_label.grid(row=5, column=0)
 # create btn submit
 submit_btn = Button(root, text="Add record to Database",
                     command=lambda: submit())
-submit_btn.grid(row=6, column=0, columnspan=3, pady=20)
+submit_btn.grid(row=6, column=0, columnspan=3, pady=20, padx=30, ipadx=50)
 # Commit
 conn.commit()
 
