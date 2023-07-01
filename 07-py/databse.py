@@ -25,6 +25,31 @@ c = conn.cursor()
 
 # create submit function for database
 def submit():
+    # Db
+    conn = sqlite3.connect("address_book.db")
+
+    # CURSOR
+    c = conn.cursor()
+
+    # Insert into table
+
+    c.execute(
+        "INSERT INTO address VALUES (:f_name,:f_last,:f_address,:f_city,:f_state,:f_zipcode)",
+        {
+
+            'f_name': f_name.get(),
+            'f_last': f_last.get(),
+            'f_address': f_address.get(),
+            'f_city': f_city.get(),
+            'f_state': f_state.get(),
+            'f_zipcode': f_zipcode.get()
+        })
+    # Commit
+    conn.commit()
+
+    # close connection
+    conn.close()
+
     # clear the text boxes
     f_name.delete(0, END)
     f_last.delete(0, END)
