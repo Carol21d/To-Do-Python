@@ -59,6 +59,23 @@ def submit():
     f_zipcode.delete(0, END)
 
 
+def query():
+    # Db
+    conn = sqlite3.connect("address_book.db")
+
+    # CURSOR
+    c = conn.cursor()
+
+    # Query the database
+    c.execute("SELECT  * FROM address")
+
+    # Commit
+    conn.commit()
+
+    # close connection
+    conn.close()
+
+
 f_name = Entry(root, width=30)
 f_name.grid(row=0, column=1, padx=20)
 f_last = Entry(root, width=30)
@@ -88,10 +105,15 @@ f_zipcode_label = Label(root, text="Zipcode: ")
 f_zipcode_label.grid(row=5, column=0)
 
 
-# create btn submit
+# create a submit button
 submit_btn = Button(root, text="Add record to Database",
                     command=lambda: submit())
-submit_btn.grid(row=6, column=0, columnspan=3, pady=20, padx=30, ipadx=50)
+submit_btn.grid(row=6, column=0, columnspan=2, pady=20, padx=30, ipadx=50)
+
+
+# create a query button
+query = Button(root, text="Show me ", command=lambda: query())
+query.grid(row=7, column=0, columnspan=2, padx=20, pady=20, ipadx=137)
 # Commit
 conn.commit()
 
