@@ -12,8 +12,14 @@ conn = sqlite3.connect()
 # CURSOR
 c = conn.cursor()
 
+# Create table
+c.exectue()
+
 
 # Commit
 conn.commit()
 
+
+# close connection
+conn.close()
 root.mainloop()
