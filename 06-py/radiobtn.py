@@ -21,7 +21,7 @@ drinks.set("PINEAPPLE")
 
 
 for text, mode in MODES:
-    Radiobutton(root, text=text, variable=drinks, value=mode).pack()
+    Radiobutton(root, text=text, variable=drinks, value=mode).pack(anchor=W)
 
 
 def clicked(value):
