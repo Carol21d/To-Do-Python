@@ -68,6 +68,8 @@ def query():
 
     # Query the database
     c.execute("SELECT  * FROM address")
+    records = c.fetchall()
+    print(records)
 
     # Commit
     conn.commit()
