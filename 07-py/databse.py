@@ -70,11 +70,13 @@ def query():
     c.execute("SELECT *,oid FROM addresses")
     records = c.fetchall()
     print(records)
-    print_records
+
+    # Loop thru results
+    print_records = ''
     for record in records:
         print_records += str(record) + "\n"
     query_lab = Label(root, text=print_records)
-
+    query_lab.grid(row=8, column=0, columnspan=2)
     # Commit
     conn.commit()
 
