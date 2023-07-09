@@ -34,7 +34,7 @@ def submit():
     # Insert into table
 
     c.execute(
-        "INSERT INTO address VALUES (:f_name,:f_last,:f_address,:f_city,:f_state,:f_zipcode)",
+        "INSERT INTO addresses VALUES (:f_name,:f_last,:f_address,:f_city,:f_state,:f_zipcode)",
         {
 
             'f_name': f_name.get(),
@@ -67,7 +67,7 @@ def query():
     c = conn.cursor()
 
     # Query the database
-    c.execute("SELECT  * FROM address")
+    c.execute("SELECT *,oid FROM addresses")
     records = c.fetchall()
     print(records)
 
@@ -78,6 +78,7 @@ def query():
     conn.close()
 
 
+# Create Text Boxes
 f_name = Entry(root, width=30)
 f_name.grid(row=0, column=1, padx=20)
 f_last = Entry(root, width=30)
@@ -109,12 +110,12 @@ f_zipcode_label.grid(row=5, column=0)
 
 # create a submit button
 submit_btn = Button(root, text="Add record to Database",
-                    command=lambda: submit())
+                    command=submit)
 submit_btn.grid(row=6, column=0, columnspan=2, pady=20, padx=30, ipadx=50)
 
 
 # create a query button
-query = Button(root, text="Show me ", command=lambda: query())
+query = Button(root, text="Show me ", command=query)
 query.grid(row=7, column=0, columnspan=2, padx=20, pady=20, ipadx=137)
 # Commit
 conn.commit()
